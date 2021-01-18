@@ -6,6 +6,7 @@ const {
   transloaditCropAction,
   signUpAction,
   getUserByEmailAction,
+  getUserByMobileNumberAction
 } = require('./controllers');
 const makeHttpCallback = require('./http-server-callback/http-callback');
 
@@ -27,7 +28,7 @@ class RestService {
     this.router.post(`${basePath}/crop`, makeHttpCallback({ controller: transloaditCropAction }));
     this.router.post(`${basePath}/signUp`, makeHttpCallback({ controller: signUpAction }));
     this.router.get(`${basePath}/userByEmail/:email`, makeHttpCallback({ controller: getUserByEmailAction }));
-
+    this.router.get(`${basePath}/userByMobile/:phoneNumber`, makeHttpCallback({ controller: getUserByMobileNumberAction }));
     }
 
   getName() {

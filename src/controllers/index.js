@@ -7,6 +7,7 @@ const {
   transloaditCrop,
   signUp,
   getUserByEmail,
+  getUserByMobileNumber
 } = require('../use-cases');
 
 // define all make actions
@@ -17,6 +18,7 @@ const makeCleanPhoneIdAction = require('./clean-phoneid');
 const makeTransloaditCropAction =  require('./transloadit-crop');
 const makeSignUpAction = require('./sign-up');
 const makeGetUserByEmailAction = require('./get-user-by-email');
+const makeGetUserByMobileNumberAction = require('./get-user-by-mobile');
 // generate actions
 const greetWelcome = makeGreetWelcomeToService({
   greetWelcomeToService,
@@ -28,6 +30,7 @@ const cleanPhoneIdAction = makeCleanPhoneIdAction({ cleanPhoneId });
 const transloaditCropAction = makeTransloaditCropAction({ transloaditCrop });
 const signUpAction = makeSignUpAction({ signUp });
 const getUserByEmailAction = makeGetUserByEmailAction({ getUserByEmail });
+const getUserByMobileNumberAction = makeGetUserByMobileNumberAction({ getUserByMobileNumber });
 
 module.exports = Object.freeze({
   greetWelcome,
@@ -37,4 +40,5 @@ module.exports = Object.freeze({
   transloaditCropAction,
   signUpAction,
   getUserByEmailAction,
+  getUserByMobileNumberAction,
 });

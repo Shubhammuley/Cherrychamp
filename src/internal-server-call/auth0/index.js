@@ -7,7 +7,7 @@ const config = require('../../config/environments');
 const makeAuth0Signup = require('./auth0-signup');
 const makeAuth0GetUserByEmail = require('./auth0-get-user-by-email');
 const makeAuth0GetAccessToken = require('./auth0-get-access-token');
-
+const makeAuth0ListAllUser = require('./auth0-list-all-user');
 const auth0SignUp = makeAuth0Signup({
   axios,
   config,
@@ -26,8 +26,14 @@ const auth0GetAccessToken = makeAuth0GetAccessToken({
   InternalServerError,
 });
 
+const auth0ListAllUser = makeAuth0ListAllUser({
+  axios,
+  config,
+  InternalServerError,
+})
 module.exports = Object.freeze({
   auth0SignUp,
   auth0GetUserByEmail,
   auth0GetAccessToken,
+  auth0ListAllUser,
 });

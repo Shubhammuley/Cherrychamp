@@ -11,6 +11,7 @@ const {
   auth0SignUp,
   auth0GetUserByEmail,
   auth0GetAccessToken,
+  auth0ListAllUser,
 } = require('../internal-server-call/auth0');
 const { gamesCollection } = require('../data-access');
 const makeGetSearch = require('./algolia-search');
@@ -20,6 +21,7 @@ const makeCleanPhoneId = require('./clean-phoneid');
 const makeTransloaditCrop = require('./transloadit-crop');
 const makeUserSignUp = require('./sign-up');
 const makeGetUserByEmail = require('./get-user-by-email');
+const makeGetUserByMobileNumber = require('./get-user-by-mobile-no');
 
 const greetWelcomeToService = makeGreetWelcomeToService();
 
@@ -58,6 +60,12 @@ const getUserByEmail = makeGetUserByEmail({
   config,
 });
 
+const getUserByMobileNumber = makeGetUserByMobileNumber({
+  auth0ListAllUser,
+  auth0GetAccessToken,
+  config,
+});
+
 module.exports = Object.freeze({
   greetWelcomeToService,
   getSearch,
@@ -66,4 +74,5 @@ module.exports = Object.freeze({
   transloaditCrop,
   signUp,
   getUserByEmail,
+  getUserByMobileNumber,
 });
