@@ -1,0 +1,48 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "The microservice for auth.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js src/*/*.feature",
+    "lint": "eslint --max-warnings 0 ./ --cache",
+    "lint:fix": "eslint --fix .",
+    "start": "node src/index.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "algoliasearch": "^4.8.3",
+    "axios": "^0.19.2",
+    "bfj": "^7.0.1",
+    "busboy": "^0.3.1",
+    "chai": "^4.2.0",
+    "dd-trace": "^0.16.2",
+    "eslint-config-airbnb": "^18.1.0",
+    "http-server": "git+ssh://git@gitssh.rapidops.com:rental-traders/rental-ms-http-server.git",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.4",
+    "telesignsdk": "^2.2.1",
+    "transloadit": "^2.0.10",
+    "utilities": "git+ssh://git@gitssh.rapidops.com:rental-traders/rental-ms-utilities.git"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-mocha-no-only": "^1.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "husky": "^4.2.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
